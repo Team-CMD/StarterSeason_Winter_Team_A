@@ -23,12 +23,18 @@ ___
 
 ## 🎮 Extra Rule
 1. **Code Style Convention**
-    - our convention
+    - 반복 변수 i,j,k,... 사용.
+    - 일반 변수는 용도에 따른 직역된 이름 사용.
+    - 숫자 변수는 num(_용도를 나타내는) 이름 사용.
+    - 함수명은 깃 헙 올라가 있는 이름 그대로 사용.
+    - 함수에 대한 간단한 설명 주석 달기.
 2. **Project Schedule**
     - first meeting (21.01.24. 3PM)
-      : 프로그램 구성 및 역할 분담
+    - code uproad (21.01.29. 자정)
+    - second meeting (21.01.30. 7PM)
 3. **Etc..**
-    - any other rules?
+    - 회의 시간, 업로드 기한 준수.
+    - 단톡, 디코, 깃헙 사용하여 서로 돕기.
 ___
 
 ## 🎨 Project Progress
@@ -36,3 +42,7 @@ ___
   - 21.01.18.
 
     > StarterSeason Winter Mini PTJ 전체 회의 및 프로젝트 설명
+  
+  - 21.01.24.
+  
+    > 프로그램 구성, 역할 분담 회의
