@@ -25,7 +25,8 @@ ___
 1. **Code Style Convention**
     - our convention
 2. **Project Schedule**
-    - our schedule
+    - first meeting (21.01.24. 3PM)
+      : 프로그램 구성 및 역할 분담
 3. **Etc..**
     - any other rules?
 ___
