@@ -67,11 +67,11 @@ int game_control(int map[MAX_Scale][MAX_Scale]){
 	
 	// 왼쪽 위에서 오른쪽 아래 대각선(↘)이 5개인 경우
 	for (int y = 0; y < 15; y++) // 대각선으로 5개가 되려면 x = 15 까지가 최대
-	{
-		count_W = 0, count_B = 0; // 줄마다 갯수 체크를 위해 count_W = 0, count_B = 0
-
+	{	
 		for (int x = 0; x < 15; x++) // 대각선으로 5개가 되려면 y = 15 까지가 최대
 		{
+			count_W = 0, count_B = 0; // 줄마다 갯수 체크를 위해 count_W = 0, count_B = 0
+			
 			for (int i = 0; i < 5; i++) // 대각선에 존재하는 흑돌,백돌이 연속으로 5개 존재할 수 있는 경우의 수 모두 체크(중복 없이)
 			{
 				if (map[y+i][x+i] == 0)
@@ -96,10 +96,10 @@ int game_control(int map[MAX_Scale][MAX_Scale]){
 	// 오른쪽 위에서 왼쪽 아래 대각선(↙)이  5개인 경우
 	for (int x = 4; x < MAX_Scale; x++) // 대각선으로 5개가 되려면 최소 x = 4  최대 MAX_Scale까지 
 	{
-		count_W = 0, count_B = 0; // 줄마다 갯수 체크를 위해 count_W = 0, count_B = 0
-
 		for (int y = 0; y < 15; y++) // 대각선으로 5개가 되려면 y = 15 까지가 최대
 		{
+			count_W = 0, count_B = 0; // 줄마다 갯수 체크를 위해 count_W = 0, count_B = 0
+			
 			for (int i = 0; i < 5; i++) // 대각선에 존재하는 흑돌,백돌이 연속으로 5개 존재할 수 있는 경우의 수 모두 체크(중복 없이)
 			{
 				if (map[y + i][x - i] == 0)
