@@ -17,6 +17,6 @@
 // Main Function
 int main(){
 
-    game_control();
+     show_stone();
     return 0;
 }
