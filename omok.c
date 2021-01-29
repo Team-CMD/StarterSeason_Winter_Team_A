@@ -59,9 +59,3 @@ void show_map(){//바둑판을 보여주는 함수
 		printf("%d", i+1);
 		}
 	}
-
-int main(){
-	show_map();
-	
-	return 0;
-}
