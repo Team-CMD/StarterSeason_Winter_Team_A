@@ -15,8 +15,47 @@
 # include "omok.h"
 
 // Main Function
-int main(){
+int main() {
 
-     show_stone();
+    int choice = 0;
+    char choice_2;
+    while (1)
+    {
+        system("cls");
+        printf("----------- (Team A )-----------\n");
+        printf("            omok game           \n");
+        printf("--------------------------------\n");
+        printf("1. Rule\n");
+        printf("2. Game start\n");
+        printf("3. Exit\n");
+        printf("--------------------------------\n");
+        printf("input : ");
+        scanf_s("%d", &choice);
+
+        switch (choice) {
+        case 1:
+            system("cls");
+            printf("-------------------------------(Rule)-------------------------------\n");
+            printf("1. 같은 색의 돌을 가로, 세로, 대각선으로 5개를 놓으면 승리\n");
+            printf("2. 선공은 흑돌\n");
+            printf("3. 키보드 방향키로 움직이고 스페이스바로 돌을 놓을 수 있습니다.\n");
+            printf("--------------------------------------------------------------------\n");
+            printf("아무키를 누르시면 이전으로 돌아갑니다.\n");
+            _getch();
+            break;
+        case 2:
+            system("cls");
+            show_stone();
+            gotoxy(0, 23);
+            printf("아무키를 누르시면 최초화면으로 돌아갑니다.\n");
+            _getch();
+            break;
+        case 3:
+            return;
+        default:
+            break;
+        }
+    }
+    
     return 0;
 }
