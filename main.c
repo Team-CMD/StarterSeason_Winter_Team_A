@@ -22,7 +22,7 @@ int main() {
     while (1)
     {
         system("cls");
-        printf("                                                                       Team A\n");
+        printf("                                                  Starter Season_Winter_Team A\n");
         printf("-------------------------------(Omok Game Rule)-------------------------------\n");
         printf("* 같은 색의 돌을 가로, 세로, 대각선으로 5개를 놓으면 승리\n");
         printf("* 선공은 흑돌\n");
