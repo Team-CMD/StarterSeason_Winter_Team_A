@@ -11,11 +11,11 @@ void gotoxy(){
 void show_stone()     // 바둑돌을 놓는 함수
 {
 	char key; // 키보드 입력받는 변수
-	int x = 0, y = 1, x_b = 38, y_b = 20, order = 0; // x, y = x,y좌표, x_b,y_b = 각 축의 최댓값, order = 돌 놓는 순서 구분 변수
+	int x = 0, y = 0, x_b = 38, y_b = 20, order = 0; // x, y = x,y좌표, x_b,y_b = 각 축의 최댓값, order = 돌 놓는 순서 구분 변수
 	int* x1 = &x, * y1 = &y;
 	int map[MAX_Scale][MAX_Scale];
 	char* stone_color[2] = { "○", "●" };
-	//int end = 3;
+	int end = 3;
 
 	gotoxy(x, y);
 	show_map();
@@ -36,29 +36,30 @@ void show_stone()     // 바둑돌을 놓는 함수
 			if (order == 0) // 돌이 검정이라면
 			{
 				map[y][x] = order; // 현재 위치에 0(검은돌임을 알려줌)을 저장
-				/*end = game_control();
+				end = game_control(map);
 				if (end == 0) // 흑돌이 이긴다면 반환값 0.
 				{
 					gotoxy(1, 21);
 					printf("검은돌이 이겼습니다.");
 					break; // 승자가 나오면 종료.
-				}*/
+				}
 				order = 1; // 다음 순서를 위해 값 변경
 			}
 			else // 돌이 하양이라면
 			{
 				map[y][x] = order; // 현재 위치에 1(백돌임을 알려줌)을 저장
-				/*end = game_control();
+				end = game_control(map);
 				if (end == 1) // 백돌이 이긴다면 반환값 1.
 				{
 					gotoxy(1, 21);
 					printf("백돌이 이겼습니다.");
 					break; // 승자가 나오면 종료.
-				}*/
+				}
 				order = 0; // 다음 순서를 위해 값 변경
 			}
 		}
 	}
+
 	return 0;
 }
 
