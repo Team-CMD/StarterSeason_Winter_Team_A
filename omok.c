@@ -22,11 +22,11 @@ void move_position(char key, int* x1, int* y1, int x_b, int y_b) {
             if (*y1 < 1)   *y1 = 1;
             break;
         case 75:// 좌 방향키
-            *x1 = *x1 - 2;    // 좌측으로 2씩 감소
+            *x1 = *x1 - 1;    // 좌측으로 2씩 감소
             if (*x1 < 1)   *x1 = 1; // x축의 최대값
             break;
         case 77:// 우 방향키
-            *x1 = *x1 + 2; //오른쪽 방향의 화살표 키 입력, 우측으로 2씩 증가
+            *x1 = *x1 + 1; //오른쪽 방향의 화살표 키 입력, 우측으로 2씩 증가
             if (*x1 > x_b)  *x1 = x_b;
             break;
         case 80:// 하 방향키
