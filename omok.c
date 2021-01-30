@@ -132,10 +132,81 @@ void gotoxy(int x, int y){
 
 void show_stone()     // 바둑돌을 놓는 함수
 {
+	char key; // 키보드 입력받는 변수
+	int x = 0, y = 0, x_b = 18, y_b = 18, order = 0; // x, y = x,y좌표, x_b,y_b = 각 축의 최댓값, order = 돌 놓는 순서 구분 변수
+	int* x1 = &x, * y1 = &y;
+	int map[MAX_Scale][MAX_Scale];
+	char* stone_color[2] = { "○", "●" };
+	int end = 3;
+
+	gotoxy(x, y);
+	show_map();
+
+	while (1)
+	{
+		gotoxy(x, y);
+		key = _getch(); // 키입력받음
+
+		if (key >= 72) // 입력받은 값이 이동값이면
+		{
+			move_position(key, x1, y1, x_b, y_b); // 움직이는 함수 호출
+		}
+		else if (key == 32) // 입력받은 값이 스페이스바이면
+		{
+			printf("%s", stone_color[order]); // 현재 좌표위치에 돌을 놓는다.
+
+			if (order == 0) // 돌이 검정이라면
+			{
+				map[y][x] = order; // 현재 위치에 0(검은돌임을 알려줌)을 저장
+				end = game_control(map);
+				if (end == 0) // 흑돌이 이긴다면 반환값 0.
+				{
+					gotoxy(1, 21);
+					printf("검은돌이 이겼습니다.");
+					break; // 승자가 나오면 종료.
+				}
+				order = 1; // 다음 순서를 위해 값 변경
+			}
+			else // 돌이 하양이라면
+			{
+				map[y][x] = order; // 현재 위치에 1(백돌임을 알려줌)을 저장
+				end = game_control(map);
+				if (end == 1) // 백돌이 이긴다면 반환값 1.
+				{
+					gotoxy(1, 21);
+					printf("백돌이 이겼습니다.");
+					break; // 승자가 나오면 종료.
+				}
+				order = 0; // 다음 순서를 위해 값 변경
+			}
+		}
+	}
+
+	return 0;
 }
 
 void move_position(char key, int* x1, int* y1, int x_b, int y_b) {
-    // 사용자가 입력하는 화살표 키에 따라 좌표 x, y값을 변경하는 함수
+	// 사용자가 입력하는 화살표 키에 따라 좌표 x, y값을 변경하는 함수
+	switch (key) {
+	case 72:// 상 방향키 
+		*y1 = *y1 - 1;
+		if (*y1 < 1)   *y1 = 0;
+		break;
+	case 75:// 좌 방향키
+		*x1 = *x1 - 1;    // 좌측으로 2씩 감소(확장형 코드라 2byte씩 이동)
+		if (*x1 < 1)   *x1 = 0; // x축의 최대값
+		break;
+	case 77:// 우 방향키
+		*x1 = *x1 + 1; //오른쪽 방향의 화살표 키 입력, 우측으로 2씩 증가(확장형 코드라 2byte씩 이동)
+		if (*x1 > x_b)  *x1 = x_b;
+		break;
+	case 80:// 하 방향키
+		*y1 = *y1 + 1; //아래쪽 방향의 화살표 키 입력
+		if (*y1 > y_b)   *y1 = y_b; // y축의 최대값
+		break;
+	default:
+		return;
+	}
 };
 
 void show_map(){
