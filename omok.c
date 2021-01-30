@@ -6,8 +6,8 @@ void game_control(void){
 
 void gotoxy(int x, int y){
     // 화면상의 커서 위치를 파악하고 제어하는 함수
-    COORD position = { x, y };
-    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), position);
+    COORD Pos = { x * 2, y };
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
 };
 
 void show_stone(){
@@ -19,11 +19,11 @@ void move_position(char key, int* x1, int* y1, int x_b, int y_b) {
     switch (key) {
         case 72:// 상 방향키 
             *y1 = *y1 - 1;
-            if (*y1 < 1)   *y1 = 1;
+            if (*y1 < 1)   *y1 = 0;
             break;
         case 75:// 좌 방향키
             *x1 = *x1 - 1;    // 좌측으로 2씩 감소
-            if (*x1 < 1)   *x1 = 1; // x축의 최대값
+            if (*x1 < 1)   *x1 = 0; // x축의 최대값
             break;
         case 77:// 우 방향키
             *x1 = *x1 + 1; //오른쪽 방향의 화살표 키 입력, 우측으로 2씩 증가
