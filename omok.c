@@ -91,4 +91,43 @@ void move_position(char key, int* x1, int* y1, int x_b, int y_b) {
 
 void show_map(){
     //바둑판을 보여주는 함수
+		gotoxy(0, 0);
+	int i, j = 0;
+	for(i = 0; i < MAX_Scale; i++){
+		for (j = 0; j < MAX_Scale; j++) {
+			gotoxy(j, i);
+			if(i == 0){
+				if(j == 0)
+					printf("┌");
+				else if(j == MAX_Scale - 1)
+					printf("┐");
+				else
+					printf("┬"); 
+			}
+			else if(j == 0){
+				if(i == MAX_Scale - 1)
+					printf("└");
+				else
+					printf("├");
+			}
+			else if(j == MAX_Scale - 1){
+				if(i == MAX_Scale - 1)
+					printf("┘");
+				else
+					printf("┤");
+			}
+			else if(i == MAX_Scale - 1){
+				printf("┴");
+			}
+			else
+				printf("┼"); 
+		}
+		printf("\n");
+	}
+	for (i = 0; i < MAX_Scale; i++) {
+		gotoxy(MAX_Scale, i);
+		printf("%d", i+1);
+		gotoxy(i, MAX_Scale);
+		printf("%d", i+1);
+		}
 };
