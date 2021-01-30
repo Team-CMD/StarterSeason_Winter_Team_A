@@ -8,7 +8,7 @@ void gotoxy(){
     // 화면상의 커서 위치를 파악하고 제어하는 함수
 };
 
-void show_stone()     // 바둑돌을 놓는 함수
+void show_stone()     // 순서에 따라 바둑돌을 놓는 함수
 {
 	char key; // 키보드 입력받는 변수
 	int x = 0, y = 0, x_b = 18, y_b = 18, order = 0; // x, y = x,y좌표, x_b,y_b = 각 축의 최댓값, order = 돌 놓는 순서 구분 변수
