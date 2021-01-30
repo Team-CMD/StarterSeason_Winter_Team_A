@@ -25,11 +25,17 @@
 # include <conio.h>
 # include <windows.h>
 
+# define MAX_Scale 19 // 바둑판의 크기 지정
+# define paint_B printf("○") // 흑돌 출력문
+# define paint_W printf("●") // 백돌 출력문
+# define W 2 // 백돌 정의
+# define B 1 // 흑돌 정의
+
 // Custom Function Declaration
-void game_control(void);
-void gotoxy();
+void game_control();
+void gotoxy(int x, int y);
 void show_stone();
-void move_position();
+void move_position(char key, int *x1, int *y1, int x_b, int y_b);
 void show_map();
 // etc...
 
