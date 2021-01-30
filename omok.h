@@ -20,13 +20,11 @@
 # include <windows.h>
 // Pre-definition keywords
 # define MAX_Scale 19 // 바둑판의 크기 지정 (기본 바둑판 크기가 19X19 size )
-# define paint_B printf("○") // 흑돌 출력문
-# define paint_W printf("●") // 백돌 출력문
 # define W 2 // 백돌 정의
 # define B 1 // 흑돌 정의
 
 // Custom Function Declaration
-void game_control();
+int game_control(int map[MAX_Scale][MAX_Scale]);
 void gotoxy(int x, int y);
 void show_stone();
 void move_position(char key, int *x1, int *y1, int x_b, int y_b);
