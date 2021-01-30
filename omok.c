@@ -66,9 +66,9 @@ int game_control(int map[MAX_Scale][MAX_Scale]){
 	
 	
 	// 왼쪽 위에서 오른쪽 아래 대각선(↘)이 5개인 경우
-	for (int y = 0; y < 15; y++) // 대각선으로 5개가 되려면 x = 15 까지가 최대
+	for (int y = 0; y < 15; y++) // 대각선으로 5개가 되려면 y = 15 까지가 최대
 	{	
-		for (int x = 0; x < 15; x++) // 대각선으로 5개가 되려면 y = 15 까지가 최대
+		for (int x = 0; x < 15; x++) // 대각선으로 5개가 되려면 x = 15 까지가 최대
 		{
 			count_W = 0, count_B = 0; // 줄마다 갯수 체크를 위해 count_W = 0, count_B = 0
 			
