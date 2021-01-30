@@ -12,20 +12,14 @@
 */
 # ifndef OMOK_H
 # define OMOK_H
-// Pre-definition keywords
-# define MAX_Scale 19 // 바둑판의 크기 지정 (기본 바둑판 크기가 19X19 size )
-# define paint_B printf("○") // 흑돌 출력문
-# define paint_W printf("●") // 백돌 출력문
-# define W 2 // 백돌 정의
-# define B 1 // 흑돌 정의
 
 // Import Header file
 # include <stdio.h>
 # include <stdlib.h>
 # include <conio.h>
 # include <windows.h>
-
-# define MAX_Scale 19 // 바둑판의 크기 지정
+// Pre-definition keywords
+# define MAX_Scale 19 // 바둑판의 크기 지정 (기본 바둑판 크기가 19X19 size )
 # define paint_B printf("○") // 흑돌 출력문
 # define paint_W printf("●") // 백돌 출력문
 # define W 2 // 백돌 정의
