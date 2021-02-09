@@ -1,4 +1,5 @@
 # StarterSeason Winter Mini PTJ_A
+## `This Project is Finished!`
 
 ## 🎲 **프로젝트 개요**
 1. **프로젝트 목표 ▼**  
